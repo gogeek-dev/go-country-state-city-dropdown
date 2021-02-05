@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Dropdown Form</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="assets/css/dropdown.css">
+ 
+
+</head>
+
+<body>
+     <div style="text-align: center;color: rgb(243, 67, 23);">
+          <h1>State by Country using Golang</h1>
+
+     </div>
+     <div id="box">
+          <form action="/users" name="registration" method="post">
+
+               <label>First Name <span style="color:red">*</span></label>
+               <input type="text" class="form-control" id="Userfname" name="firstname" placeholder="Enter Firstname">
+               <br>
+
+               <label>Last Name <span style="color:red">*</span></label>
+               <input type="text" class="form-control" id="Userlname" name="lastname" placeholder="Enter Lastname">
+               <br>
+               <label>Email ID <span style="color:red">*</span></label>
+               <input type="text" class="form-control" id="UserEmail" name="email" placeholder="Enter Email Id">
+
+               <br>
+
+               <label>Country <span style="color:red">*</span></label>
+
+               <select class="form-control country" id="country_dropdown">
+
+                    <option value="">Select Country</option>
+                    {{range.}}
+
+                    <option value="{{.Countryid}}">{{.Countryname}}</option>
+                    {{ end }}
+               </select>
+
+               <br>
+               <label>State <span style="color:red">*</span></label>
+               <select class="form-control state" id="state_dropdown">
+                    <option value="">Select State</option>
+
+               </select>
+
+               <br>
+               <label>City <span style="color:red">*</span></label>
+               <select name="cityid" class="form-control city" id="city_dropdown">
+                    <option value="">Select City</option>
+
+               </select>
+
+
+               <input type="submit" id="btn-submitt"  value="Submit">
+
+          </form>
+        
+     </div>
+     <script type="text/javascript" src="assets/js/ajaxcall.js"></script>
+     <script type="text/javascript" src="assets/js/validations.js"></script>
+</body>
+
+</html>
